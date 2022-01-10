@@ -16,4 +16,10 @@ export class ListadoPeliculasComponent implements OnInit {
 
   }
 
+  remover(indicePelicula: number): void {
+    /*El método splice() cambia el contenido de un array
+     eliminando elementos existentes y / o agregando nuevos elementos.*/
+    this.peliculas.splice(indicePelicula, 1);
+  }
+
 }

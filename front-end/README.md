@@ -1,2 +1,2 @@
-## 26-Parametros - Haciendo Componentes Reutilizables
-Hemos hecho el binding de atributos y hemos hecho al componete reutilizable, la propiedad peliculas podra recibir peliculas en cines o de estreno y las llenara como dos array diferentes.
+## 27-Eventos - Respondiendo a Acciones del Usuario
+Se crea el método para poder elimianr elementos del array pasandole el indice y podemos observar que al eliminar los elemento se modifican dinamicamente los indices de los elementos
