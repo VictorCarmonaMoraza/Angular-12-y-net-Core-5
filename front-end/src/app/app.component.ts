@@ -26,20 +26,7 @@ export class AppComponent implements OnInit {
     }, 1000);
 
     setTimeout(() => {
-      this.peliculasProximosEstrenos = [{
-        titulo: 'Avenger',
-        fechaLanzamiento: new Date(),
-        precio: 1400.99
-      },
-      {
-        titulo: 'Inception',
-        fechaLanzamiento: new Date('2016-11-14'),
-        precio: 300.99
-      }, {
-        titulo: 'Robocop',
-        fechaLanzamiento: new Date('2016-11-14'),
-        precio: 300.99
-      }]
+      this.peliculasProximosEstrenos = []
     }, 3000)
   }
 

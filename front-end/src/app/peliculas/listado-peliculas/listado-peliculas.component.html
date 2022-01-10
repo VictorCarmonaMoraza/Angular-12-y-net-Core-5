@@ -1,31 +1,27 @@
-<div *ngIf="!peliculas">
-  <img src="https://c.tenor.com/28DFFVtvNqYAAAAC/loading.gif" />
-</div>
+<app-listado-generico [listado]="peliculas">
+  <ng-container vacio>
+    <div>Mensaje personalizado para contenido <b>vacio</b></div>
+  </ng-container>
 
-<!--Si no hay peliculas que mostrar mostraremos el mensaje-->
-<!--el operador ? nos quita el error de si vienen undefined-->
-<div *ngIf="peliculas?.length === 0">
-  <p>No hay peliculas que mostrar</p>
-</div>
+  <ng-container contenido>
+    <div
+      *ngFor="let pelicula of peliculas; let indice = index"
+      class="pelicula-contenedor"
+    >
+      <div>
+        Pelicula {{ indice }}: {{ pelicula.titulo }}
+        <button style="margin-left: 1rem;" (click)="remover(indice)">
+          Remover
+        </button>
+      </div>
 
-<ng-container *ngIf="peliculas && peliculas.length > 0">
-  <div
-    *ngFor="let pelicula of peliculas; let indice = index"
-    class="pelicula-contenedor"
-  >
-    <div>
-      Pelicula {{ indice }}: {{ pelicula.titulo }}
-      <button style="margin-left: 1rem;" (click)="remover(indice)">
-        Remover
-      </button>
+      <div>
+        {{ pelicula.fechaLanzamiento | date: 'dd-MMMM-yyyy' | uppercase }}
+      </div>
+
+      <div>
+        {{ pelicula.precio | currency }}
+      </div>
     </div>
-
-    <div>
-      {{ pelicula.fechaLanzamiento | date: 'dd-MMMM-yyyy' | uppercase }}
-    </div>
-
-    <div>
-      {{ pelicula.precio | currency }}
-    </div>
-  </div>
-</ng-container>
+  </ng-container>
+</app-listado-generico>
