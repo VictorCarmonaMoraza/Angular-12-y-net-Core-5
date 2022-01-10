@@ -1,3 +1,7 @@
-## 30-Proyección de contenido
-Nos permite mandar como parametro a un componente contenido html.
-Este de proyección de contenido es de vital importancia en el desarrollo de angular.
+## 31-Instalando Material Design
+Vamos a la pagina: https://material.angular.io/
+Pasos para instalar:
+  1-ng add @angular/material
+  2-Crearemos un modulo para estos componentes : ng g m material
+  3-Importamos el modulo creado al app.module.ts
+
