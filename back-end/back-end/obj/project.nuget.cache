@@ -1,0 +1,15 @@
+{
+  "version": 2,
+  "dgSpecHash": "//x22w/8HUOXN3HGgNc8z5Ni3V6zGt8OisCTrTxR7cAcOjxZ0CC0dKVHcZQfE7siNw00hfiraoGLHXI3K4RJAg==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\Victo\\Desktop\\Proyectos 2022\\Angular 12 y net Core 5\\back-end\\back-end\\back-end.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\Victo\\.nuget\\packages\\microsoft.extensions.apidescription.server\\3.0.0\\microsoft.extensions.apidescription.server.3.0.0.nupkg.sha512",
+    "C:\\Users\\Victo\\.nuget\\packages\\microsoft.openapi\\1.2.3\\microsoft.openapi.1.2.3.nupkg.sha512",
+    "C:\\Users\\Victo\\.nuget\\packages\\swashbuckle.aspnetcore\\5.6.3\\swashbuckle.aspnetcore.5.6.3.nupkg.sha512",
+    "C:\\Users\\Victo\\.nuget\\packages\\swashbuckle.aspnetcore.swagger\\5.6.3\\swashbuckle.aspnetcore.swagger.5.6.3.nupkg.sha512",
+    "C:\\Users\\Victo\\.nuget\\packages\\swashbuckle.aspnetcore.swaggergen\\5.6.3\\swashbuckle.aspnetcore.swaggergen.5.6.3.nupkg.sha512",
+    "C:\\Users\\Victo\\.nuget\\packages\\swashbuckle.aspnetcore.swaggerui\\5.6.3\\swashbuckle.aspnetcore.swaggerui.5.6.3.nupkg.sha512"
+  ],
+  "logs": []
+}
