@@ -35,3 +35,6 @@ Aqui hemos dado los primeros pasos de interpolación y un recorrido con un ngFor
 ## 24-ngIf - Mostrar u Ocultar UI Dinámicamente
 Hemos añadio un loading para cuando el tiempo muerto que la aplicación esta recibiendo los datos y hemos creado la funcion para que se ejeucute al segundo.
 Hemos implementado el metodo OnInit
+
+## 25-Creando un Nuevo Componente
+Se ha creado un nuevo componente que albergara los listados de peliculas y este componente es llamado en el app.component.html
