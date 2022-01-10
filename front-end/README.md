@@ -1,2 +1,2 @@
-## 27-Eventos - Respondiendo a Acciones del Usuario
-Se crea el método para poder elimianr elementos del array pasandole el indice y podemos observar que al eliminar los elemento se modifican dinamicamente los indices de los elementos
+## 28-ng-container - Evitando Etiquetas Innecesarias en el DOM
+Hemos quitado el div externo que teniamos cambiandolo por un ng-conainer que contendra los dos div de peliculas pero de forma que no se mostrara en el DOM ese container sin embargo el div anterior si
