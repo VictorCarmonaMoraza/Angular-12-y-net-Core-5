@@ -1,0 +1,8 @@
+/*sticky por muchos elementos que tenga el listado el menu nunca desaparece siempr se mantiene , nunca lo oculta porque el
+scroll te obligue*/
+mat-toolbar{
+  position: sticky;
+  position: -webkit-sticky;
+  top: 0;
+  z-index: 1000;
+}

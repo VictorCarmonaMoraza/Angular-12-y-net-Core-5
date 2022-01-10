@@ -9,12 +9,14 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 //Modulo
 import { MaterialModule } from './material/material.module';
+import { MenuComponent } from './menu/menu.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     ListadoPeliculasComponent,
-    ListadoGenericoComponent
+    ListadoGenericoComponent,
+    MenuComponent
   ],
   imports: [
     BrowserModule,

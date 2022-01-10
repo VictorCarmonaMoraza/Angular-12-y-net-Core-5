@@ -1,7 +1,7 @@
-## 31-Instalando Material Design
-Vamos a la pagina: https://material.angular.io/
-Pasos para instalar:
-  1-ng add @angular/material
-  2-Crearemos un modulo para estos componentes : ng g m material
-  3-Importamos el modulo creado al app.module.ts
+## 32-Creando el menu
+Pagina patra los iconos: https://material.io/design/iconography/system-icons.html#design-principles
+
+Icono de movie: https://fonts.google.com/icons?icon.query=local+movie
+
+Hemos hecho un menu que no oculta por mucho que baje el scroll y con un icono
 
