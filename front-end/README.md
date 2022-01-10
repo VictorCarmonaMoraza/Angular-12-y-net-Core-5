@@ -29,5 +29,9 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
 ## 13-Creacion del proyecto Angular 12 con n Web API con Net Core 5
 Aqui henos creado los proyectos y a partir de aqui se empieza toda la aplicación
 
-## 24-ngFor - Iterando Coleccionesen el interfaz de Usuario(UI)
+## 23-ngFor - Iterando Coleccionesen el interfaz de Usuario(UI)
 Aqui hemos dado los primeros pasos de interpolación y un recorrido con un ngFor para recorrer un array de peliculas
+
+## 24-ngIf - Mostrar u Ocultar UI Dinámicamente
+Hemos añadio un loading para cuando el tiempo muerto que la aplicación esta recibiendo los datos y hemos creado la funcion para que se ejeucute al segundo.
+Hemos implementado el metodo OnInit
