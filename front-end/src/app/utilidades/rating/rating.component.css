@@ -1,0 +1,9 @@
+
+/*Color para cuando pasamos el raron por encima de ellas y que se agregara dinamicamente*/
+.checked {
+  color: orange;
+}
+/*Hacemos que salga una mano cuando nos posicionamos encima de uan estrella*/
+mat-icon {
+  cursor: pointer;
+}

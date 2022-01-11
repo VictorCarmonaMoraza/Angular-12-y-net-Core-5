@@ -1,0 +1,9 @@
+<mat-icon
+  *ngFor="let i of maximoArregloEstrellas; let indice = index"
+  (mouseenter)="manejarMouseEnter(indice)"
+  (mouseleave)="manejarMouseLeave()"
+  (click)="marcarEstrellaSeleccionada(indice)"
+  [ngClass]="{checked: estrellaSeleccionada > indice}"
+>
+  star
+</mat-icon>

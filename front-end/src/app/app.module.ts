@@ -10,13 +10,15 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 //Modulo
 import { MaterialModule } from './material/material.module';
 import { MenuComponent } from './menu/menu.component';
+import { RatingComponent } from './utilidades/rating/rating.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     ListadoPeliculasComponent,
     ListadoGenericoComponent,
-    MenuComponent
+    MenuComponent,
+    RatingComponent
   ],
   imports: [
     BrowserModule,
