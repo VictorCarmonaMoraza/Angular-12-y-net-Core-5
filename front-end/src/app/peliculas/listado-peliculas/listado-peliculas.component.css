@@ -1,9 +1,32 @@
-.pelicula-contenedor{
-  border: 1px solid black;
-  margin-bottom: 1rem;
-  padding: 1rem;
+/*Esta en plural*/
+.peliculas-contenedor {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  align-items: center;
 }
 
-p{
-  color: red;
+/*Esta en singular*/
+.pelicula-contenedor {
+  margin-right: 2%;
+  margin-bottom: 10px;
+  text-align: center;
+}
+
+p {
+  max-width: 225px;
+  height: 44px;
+  font-size: 15px;
+  font-weight: bold;
+}
+
+/*Para definir el tamaño de la imagen*/
+img {
+  width: 225px;
+  height: 300px;
+}
+
+/*Margen para los botonoes*/
+button {
+  margin-left: 1em;
 }

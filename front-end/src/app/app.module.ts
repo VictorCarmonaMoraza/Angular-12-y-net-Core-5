@@ -1,17 +1,18 @@
+//Modulos
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
+import { MaterialModule } from './material/material.module';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AppRoutingModule } from './app-routing.module';
+
+//Componentes
 import { AppComponent } from './app.component';
 import { ListadoPeliculasComponent } from './peliculas/listado-peliculas/listado-peliculas.component';
 import { ListadoGenericoComponent } from './utilidades/listado-generico/listado-generico.component';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-
-//Modulo
-import { MaterialModule } from './material/material.module';
 import { MenuComponent } from './menu/menu.component';
 import { RatingComponent } from './utilidades/rating/rating.component';
-import { CicloDeVidaComponent } from './ciclo-de-vida/ciclo-de-vida.component';
+
+//Servicios
 
 @NgModule({
   declarations: [
@@ -19,8 +20,7 @@ import { CicloDeVidaComponent } from './ciclo-de-vida/ciclo-de-vida.component';
     ListadoPeliculasComponent,
     ListadoGenericoComponent,
     MenuComponent,
-    RatingComponent,
-    CicloDeVidaComponent
+    RatingComponent
   ],
   imports: [
     BrowserModule,

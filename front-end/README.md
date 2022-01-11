@@ -1,2 +1,5 @@
-## 37 - Estilos Globales
-Se añade regla de h2 a nivel global para mostrar el h2 en rojo y a nivel de componente para mostrar los h2 en azul.
+## 40 - Limpieza del Proyecto
+Se han eliminado componentes y se han arreglado las lllamadas desde distintos componentes
+Se ha organizado el codigo y se han agregado imagenes para las peliculas
+Url para traerse las peliculas  -->https://www.imdb.com/
+La url anterior funciona regular mejor cojer las imagenes de google
