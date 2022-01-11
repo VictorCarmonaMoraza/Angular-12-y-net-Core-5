@@ -1,5 +1,6 @@
-## 40 - Limpieza del Proyecto
-Se han eliminado componentes y se han arreglado las lllamadas desde distintos componentes
-Se ha organizado el codigo y se han agregado imagenes para las peliculas
-Url para traerse las peliculas  -->https://www.imdb.com/
-La url anterior funciona regular mejor cojer las imagenes de google
+## 41 - Ruteo
+Nuestro modulo de ruteo es:  app-routing.module.ts
+
+Se han creado componentes nuevos que se utilizan para la navegacion en la palicacion y que son llamados en el menu.
+
+Toda la informacion que estaba en app.component.html se ha pasado a un componente nuevo y el app.component.html solo llevara la etiqueta de ruteo que nos permitira navegar por los distintos componentes de nuestra aplicación.
