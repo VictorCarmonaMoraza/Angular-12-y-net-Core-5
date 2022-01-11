@@ -1,11 +1,22 @@
-## 33-ngClass - Aplicando Estilos de CSS Dinámicamente
-1-Crearemos un componente nuevo dentro de la carpeta utiliades llamado rating sin el archivo de pruebas 
-ng g c utilidades/rating --skip-tests=true
-2-Añadiremos css dinamicamente:
-  [ngClass]="{checked: estrellaSeleccionada > indice}"
-3-Varios metodos para cuando pasemos el boton por encima de las estrellas y cuando las abandonemos
-  (mouseenter)="manejarMouseEnter(indice)"
-  (mouseleave)="manejarMouseLeave()"
-4-Un metodo para marcar la estrella seleccionada
-  (click)="marcarEstrellaSeleccionada(indice)"
+## 34 - Output - Comunicación de Componente Hijo a Padre
+Compoennte Padre--->app.component.ts
+
+Componente Hijo---->el hijo es rating.component.ts
+
+-Hijo rating.component.ts
+
+  1-Declaramos el Output
+       @Output() emitirHaciaElPadre: EventEmitter<number> = new EventEmitter<number>();
+
+  2-Emitimos desde cualquier metodo al padre
+        this.emitirHaciaElPadre.emit(this.estrellaSeleccionada);
+
+-Padre app.component.html. Enviamos informacion al metodo del padre recibirDelHijo
+        <app-rating (emitirHaciaElPadre)="recibirDelHijo($event)"></app-rating>
+
+-Padre app.component.ts .Recibimso informacion y la mostramos o tratamos de la forma que nosotros queramos
+        recibirDelHijo(voto: number):void {
+          alert(voto);
+        }
+
 

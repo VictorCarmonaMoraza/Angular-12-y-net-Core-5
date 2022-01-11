@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 
 @Component({
   selector: 'app-rating',
@@ -9,6 +9,7 @@ export class RatingComponent implements OnInit {
 
   @Input() maximoEstrellas = 5;
   @Input() estrellaSeleccionada = 0;
+  @Output() emitirHaciaElPadre: EventEmitter<number> = new EventEmitter<number>();
   maximoArregloEstrellas = [];
   votacionUsuario = false;
   estrellaAnterior;
@@ -44,6 +45,8 @@ export class RatingComponent implements OnInit {
     this.estrellaSeleccionada = indice + 1;
     this.votacionUsuario = true;
     this.estrellaAnterior = this.estrellaSeleccionada;
+    //Cuando votamos emitimos la votacion
+    this.emitirHaciaElPadre.emit(this.estrellaSeleccionada);
   }
 
 }

@@ -22,13 +22,15 @@ export class AppComponent implements OnInit {
         titulo: 'Moana',
         fechaLanzamiento: new Date('2016-11-14'),
         precio: 300.99
-        }]
+      }]
     }, 1000);
 
     setTimeout(() => {
       this.peliculasProximosEstrenos = []
     }, 3000)
   }
-
+  recibirDelHijo(voto: number):void {
+    alert(voto);
+  }
 
 }
