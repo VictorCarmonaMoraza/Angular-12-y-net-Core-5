@@ -1,6 +1,9 @@
 <app-listado-generico [listado]="peliculas">
   <ng-container vacio>
-    <div>Mensaje personalizado para contenido <b>vacio</b></div>
+    <div>
+      Mensaje personalizado para contenido
+      <b>vacio</b>
+    </div>
   </ng-container>
 
   <ng-container contenido>
@@ -9,10 +12,12 @@
       class="pelicula-contenedor"
     >
       <div>
-        Pelicula {{ indice }}: {{ pelicula.titulo }}
-        <button style="margin-left: 1rem;" (click)="remover(indice)">
-          Remover
-        </button>
+        <h2>
+          Pelicula {{ indice }}: {{ pelicula.titulo }}
+          <button style="margin-left: 1rem;" (click)="remover(indice)">
+            Remover
+          </button>
+        </h2>
       </div>
 
       <div>
