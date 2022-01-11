@@ -7,7 +7,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AppComponent implements OnInit {
 
-  title = 'front-end';
+  title = 'El valor que yo quiera';
   peliculasEnCines;
   peliculasProximosEstrenos;
 
