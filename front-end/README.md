@@ -1,22 +1,17 @@
-## 34 - Output - Comunicación de Componente Hijo a Padre
-Compoennte Padre--->app.component.ts
+## 35-Ciclo de Vida de un Componente
 
-Componente Hijo---->el hijo es rating.component.ts
+  -Utilizamos OnInit para inicializar un componente
 
--Hijo rating.component.ts
+  -Onchanges - Se dispara cuando som modificados los parámetros de un componente desde afuera
 
-  1-Declaramos el Output
-       @Output() emitirHaciaElPadre: EventEmitter<number> = new EventEmitter<number>();
+  -OnDestroy - Es llamado justo antes de que un componente sea destruido. Es ideal para limpiar recursos
 
-  2-Emitimos desde cualquier metodo al padre
-        this.emitirHaciaElPadre.emit(this.estrellaSeleccionada);
+  -DoCheck - Es llamado cada vez que el detector de cambios de Angular es ejecutado
 
--Padre app.component.html. Enviamos informacion al metodo del padre recibirDelHijo
-        <app-rating (emitirHaciaElPadre)="recibirDelHijo($event)"></app-rating>
+  -AfterViewInit - Permite ejecutar funcionalidad cuando los componentes hijos han sido renderizados
 
--Padre app.component.ts .Recibimso informacion y la mostramos o tratamos de la forma que nosotros queramos
-        recibirDelHijo(voto: number):void {
-          alert(voto);
-        }
+  -AfterViewChecked - Es como un DoCheck para los componetes hijos
 
+  -AfterContentInit - Se ejecuta luego de que el contenido proyectado en el componente ha sido inicializado
 
+  -AfterContentChecked - Es como un DoCheck para los componentes proyectados
