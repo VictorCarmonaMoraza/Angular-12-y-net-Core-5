@@ -1,2 +1,10 @@
-## 42 - Navegación por JavaScript
-Hemos creado componentes nuevos que nos van a ahcer falta en la aplicación y hemos organizado un poco las rutas para que podamos ir de un componente a otro.
+## 43 - Parámetros de Ruta
+En el constructor del componente editar-actor debemos llamar al servicio:
+
+  constructor(private activatedRoute:ActivatedRoute) { }
+
+  Se han creado varios componentes para su edicion como son los de:
+      -generos
+      -peliculas
+      -actores
+      -cines

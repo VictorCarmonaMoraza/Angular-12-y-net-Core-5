@@ -21,6 +21,10 @@ import { CrearActorComponent } from './actores/crear-actor/crear-actor.component
 import { CrearPeliculaComponent } from './peliculas/crear-pelicula/crear-pelicula.component';
 import { CrearCineComponent } from './cines/crear-cine/crear-cine.component';
 import { IndiceCineComponent } from './cines/indice-cine/indice-cine.component';
+import { EditarActorComponent } from './actores/editar-actor/editar-actor.component';
+import { EditarGeneroComponent } from './generos/editar-genero/editar-genero.component';
+import { EditarCineComponent } from './cines/editar-cine/editar-cine.component';
+import { EditarPeliculaComponent } from './peliculas/editar-pelicula/editar-pelicula.component';
 
 //Servicios
 
@@ -38,7 +42,11 @@ import { IndiceCineComponent } from './cines/indice-cine/indice-cine.component';
     CrearActorComponent,
     CrearPeliculaComponent,
     CrearCineComponent,
-    IndiceCineComponent
+    IndiceCineComponent,
+    EditarActorComponent,
+    EditarGeneroComponent,
+    EditarCineComponent,
+    EditarPeliculaComponent
   ],
   imports: [
     BrowserModule,
