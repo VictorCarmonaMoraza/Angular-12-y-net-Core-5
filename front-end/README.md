@@ -1,10 +1,2 @@
-## 43 - Parámetros de Ruta
-En el constructor del componente editar-actor debemos llamar al servicio:
-
-  constructor(private activatedRoute:ActivatedRoute) { }
-
-  Se han creado varios componentes para su edicion como son los de:
-      -generos
-      -peliculas
-      -actores
-      -cines
+## 44 - Wildcard - Attrapando Todas las Rutas
+Hemos agregado el wildcard por si hay error en la rutas poder redigir al un componente y no dejando los errores en la url
