@@ -1,6 +1,7 @@
-## 47 -Formularios Reactivos vs Por Plantillas
--Los formularios por plantillas tienen sun configuracion principalmente en la plantilla del componente
+## 48 - Formualrio Recativo(Formulario de Géneros)
 
--Los formularios reactivos tienen su configuracion en la clase del componente
+1-Necesitamos importar el modulo RecativeFormModule que se hara en el app.module.ts
+
+  import {ReactiveFormsModule} from '@angular/forms'
 
 

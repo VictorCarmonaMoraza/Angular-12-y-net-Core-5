@@ -1,3 +1,20 @@
+<!-- <button mat-flat-button color="primary" type="button" (click)="GuardarGenero()">Guardar Cambios</button> -->
 
+<h2>Crear Género</h2>
 
-<button mat-flat-button color="primary" type="button" (click)="GuardarGenero()">Guardar Cambios</button>
+<!--Asociamos el formulario a formGroup-->
+<form (submit)="guardarCambios()" [formGroup]="formGenero">
+  <mat-form-field appearance="outline">
+    <mat-label>Nombre*</mat-label>
+    <input formControlName="nombre" matInput />
+  </mat-form-field>
+
+  <div>
+    <button mat-flat-button color="primary">
+      Guardar Cambios
+    </button>
+    <a mat-stroked-button routerLink="/generos">
+      Cancelar
+    </a>
+  </div>
+</form>

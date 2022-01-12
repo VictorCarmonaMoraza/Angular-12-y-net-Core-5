@@ -3,8 +3,9 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { MaterialModule } from './material/material.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import {ReactiveFormsModule} from '@angular/forms'
 
-//Modulo para el ruteo o para dirigirnos a cada ruta 
+//Modulo para el ruteo o para dirigirnos a cada ruta
 import { AppRoutingModule } from './app-routing.module';
 
 //Componentes
@@ -52,7 +53,8 @@ import { EditarPeliculaComponent } from './peliculas/editar-pelicula/editar-peli
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
-    MaterialModule
+    MaterialModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
