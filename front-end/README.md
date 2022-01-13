@@ -1,7 +1,3 @@
-## 48 - Formualrio Recativo(Formulario de Géneros)
-
-1-Necesitamos importar el modulo RecativeFormModule que se hara en el app.module.ts
-
-  import {ReactiveFormsModule} from '@angular/forms'
-
+## 49 - Validaciones en Formularios Reactivos
+Añadimos validacion pare el campo nombre de hacerlo requerido y que tenga una longitud minima de 3 caracteres
 
