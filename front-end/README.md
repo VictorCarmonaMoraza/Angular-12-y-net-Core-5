@@ -1,3 +1,4 @@
-## 49 - Validaciones en Formularios Reactivos
-Añadimos validacion pare el campo nombre de hacerlo requerido y que tenga una longitud minima de 3 caracteres
+## 50 - Validaciones Personalizadas
+
+Se crea un archivo nuevo que contendra un metodo para la validacion de la primera letra mayuscula para el campo nombre y que se aplicara en la validaciones.
 
