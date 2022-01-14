@@ -1,4 +1,5 @@
-## 50 - Validaciones Personalizadas
+## 51 -  Editando Géneros
 
-Se crea un archivo nuevo que contendra un metodo para la validacion de la primera letra mayuscula para el campo nombre y que se aplicara en la validaciones.
+Hemos modificado para que podamos recibir un genero harcodeado y podamos probarlo en la pantalla de edicion.
+Este desarrollo es de los mas importante porque podemos pasar parametros de uno componente a otro.
 

@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { generoCreacionDTO } from '../Interface-Genero/IGenero';
 
 @Component({
   selector: 'app-editar-genero',
@@ -7,9 +9,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class EditarGeneroComponent implements OnInit {
 
-  constructor() { }
+  modeloEdicion: generoCreacionDTO={nombre:'Drama'}
+
+  constructor(private router: Router) { }
 
   ngOnInit(): void {
   }
-
+  GuardarGenero(genero: generoCreacionDTO) {
+    //Guardar los cambios
+    console.log(genero);
+    //Navegamos hacia la pagian principal de generos
+    this.router.navigate(['/generos']);
+  }
 }
