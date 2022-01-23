@@ -1,3 +1,4 @@
+import { FiltroPeliculasComponent } from './peliculas/filtro-peliculas/filtro-peliculas.component';
 import { EditarGeneroComponent } from './generos/editar-genero/editar-genero.component';
 import { EditarCineComponent } from './cines/editar-cine/editar-cine.component';
 import { EditarPeliculaComponent } from './peliculas/editar-pelicula/editar-pelicula.component';
@@ -31,11 +32,12 @@ const routes: Routes = [
 
   { path: 'peliculas/crear', component: CrearPeliculaComponent },
   { path: 'pelicular/editar/:id', component: EditarPeliculaComponent },
+  { path: 'peliculas/buscar', component: FiltroPeliculasComponent },
 
   /*Regla de ruteo Wildcard, sino no existe el id o esta caido, con esto el problema es que quedaria en la url
    lo que hemos puesto mal, esto lo podemos solucionar con redirectTo */
   //{path:'**', component:LandingPageComponent}
-  {path:'**', redirectTo:''}
+  { path: '**', redirectTo: '' }
 
 ];
 

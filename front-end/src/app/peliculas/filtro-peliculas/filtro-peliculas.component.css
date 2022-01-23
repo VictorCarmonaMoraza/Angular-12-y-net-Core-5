@@ -1,0 +1,9 @@
+/*Queremos que el formulario ocupe todo la anchura de la pagina*/
+form {
+  width: 100%;
+}
+
+form mat-form-field {
+  width: 30%;
+  margin-right: 1rem;
+}
