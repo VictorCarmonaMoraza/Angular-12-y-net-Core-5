@@ -1,5 +1,8 @@
+import { ActivatedRoute } from '@angular/router';
 import { FormBuilder, FormGroup } from '@angular/forms';
 import { Component, OnInit } from '@angular/core';
+import { Location } from '@angular/common';
+import { ThrowStmt } from '@angular/compiler';
 
 @Component({
   selector: 'app-filtro-peliculas',
@@ -30,12 +33,17 @@ export class FiltroPeliculasComponent implements OnInit {
     enCines: false
   }
 
-  constructor(private formBuilder: FormBuilder) { }
+  constructor(
+    private formBuilder: FormBuilder,
+    private location: Location,
+  private activatedRoute: ActivatedRoute) { }
 
   ngOnInit(): void {
     //Campos del formulario
     this.formPelicula = this.formBuilder.group(this.formularioOriginal);
-    
+    this.leerValoresURL();
+    this.buscarPeliculas(this.formPelicula.value);
+
     //Esto devuelve un observable
     //Cada vez que haya un cambio en el formulario saltara un evento
     this.formPelicula.valueChanges
@@ -45,7 +53,8 @@ export class FiltroPeliculasComponent implements OnInit {
         this.peliculasAEnviar = this.peliculasOriginal;
         //Llamamos al metodo con los cambios que se vayan produciendo
         this.buscarPeliculas(valores);
-    })
+        this.escribirParametrosBusquedaEnURL();
+      })
   }
 
   //Metodo que se llama mediante el boton limpiar
@@ -59,13 +68,13 @@ export class FiltroPeliculasComponent implements OnInit {
       //Si la pelicula es distinta de menos es que hemos encontrado la pelicula
       //Si lo que el usuario ha escrito se encuentra dentro del titulo
       this.peliculasAEnviar = this.peliculasAEnviar
-        .filter(pelicula=>pelicula.titulo.indexOf(valores.titulo)!==-1)
+        .filter(pelicula => pelicula.titulo.indexOf(valores.titulo) !== -1)
     }
-    if (valores.generoId !==0) {
+    if (valores.generoId !== 0) {
       this.peliculasAEnviar = this.peliculasAEnviar
         .filter(pelicula => pelicula.generos.indexOf(valores.generoId) !== -1)
     }
-    if (valores.proximosEstrenos ) {
+    if (valores.proximosEstrenos) {
       this.peliculasAEnviar = this.peliculasAEnviar
         .filter(pelicula => pelicula.proximosEstrenos)
     }
@@ -73,6 +82,59 @@ export class FiltroPeliculasComponent implements OnInit {
       this.peliculasAEnviar = this.peliculasAEnviar
         .filter(pelicula => pelicula.enCines)
     }
+  }
+
+  private escribirParametrosBusquedaEnURL() {
+    var queryStrings = [];
+
+    var valoresFormulario = this.formPelicula.value;
+
+    //Si tenemos titulo
+    if (valoresFormulario.titulo) {
+      //añadimos al array de querystring el valor del titulo
+      queryStrings.push(`titulo=${valoresFormulario.titulo}`);
+    }
+    //Si tenemos titulo
+    if (valoresFormulario.generoId != '0') {
+      //añadimos al array de querystring el valor del titulo
+      queryStrings.push(`generoId=${valoresFormulario.generoId}`);
+    }
+    //Si tenemos titulo
+    if (valoresFormulario.proximosEstrenos) {
+      //añadimos al array de querystring el valor del titulo
+      queryStrings.push(`proximosEstrenos=${valoresFormulario.proximosEstrenos}`);
+    }
+    //Si tenemos titulo
+    if (valoresFormulario.enCines) {
+      //añadimos al array de querystring el valor del titulo
+      queryStrings.push(`enCines=${valoresFormulario.enCines}`);
+      //rescribimos la URL
+      this.location.replaceState('peliculas/buscar', queryStrings.join('&'));
+    }
+  }
+
+  private leerValoresURL() {
+    this.activatedRoute.queryParams.subscribe((params) => {
+      var objeto:any = {};
+
+      if (params.titulo) {
+        objeto.titulo = params.titulo;
+      }
+
+      if (params.generoId) {
+        objeto.generoId = Number(params.generoId);
+      }
+
+      if (params.proximosEstrenos) {
+        objeto.proximosEstrenos = params.proximosEstrenos;
+      }
+
+      if (params.enCines) {
+        objeto.enCines = params.enCines;
+      }
+
+      this.formPelicula.patchValue(objeto);
+    });
   }
 
 }
