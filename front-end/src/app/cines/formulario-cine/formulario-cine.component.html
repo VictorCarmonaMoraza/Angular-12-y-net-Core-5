@@ -1,0 +1,19 @@
+<!--Formualrio-->
+
+<form (submit)="onSubmit()" [formGroup]="formCines">
+  <mat-form-field appearance="outline">
+    <mat-label>Nombre*</mat-label>
+    <input formControlName="nombreCine" matInput/>
+    <mat-error *ngIf="formCines.invalid">El acmpo nombre es requerido</mat-error>
+  </mat-form-field>
+
+  <div>
+    <button mat-flat-button color="primary" [disabled]="formCines.invalid">
+      Guardar Cambios
+    </button>
+    <a mat-stroked-button routerLink="/cines">
+
+    </a>
+  </div>
+
+</form>
