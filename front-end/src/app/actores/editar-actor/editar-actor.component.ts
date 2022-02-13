@@ -1,4 +1,4 @@
-import { actorCreacionDTO } from './../modelo/actor';
+import { actorCreacionDTO, actorDTO } from './../modelo/actor';
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 
@@ -9,7 +9,7 @@ import { ActivatedRoute } from '@angular/router';
 })
 export class EditarActorComponent implements OnInit {
 
-  modelo: actorCreacionDTO = {nombre:'Victor',fechaNacimiento:new Date()}
+  modelo: actorDTO = { nombre: 'Victor', fechaNacimiento: new Date(), foto:'https://www.ecartelera.com/images/sets/24100/24148.jpg'}
 
   constructor(private activatedRoute: ActivatedRoute) { }
 

@@ -1,5 +1,5 @@
-## 55 - Formulario Actores
+## 56 - Componente Selector de Imagenes
 
-Hemos creado el formulario de actores para la creacion y la edicion de actores
+
   
   

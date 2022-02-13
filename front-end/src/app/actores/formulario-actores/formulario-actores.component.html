@@ -2,13 +2,14 @@
 <!--Construimos el formulario-->
 <form  (submit)="onSubmit()" [formGroup]="formActores">
 
-  <!--Campos del formulario-->
+  <!--Campo nombre-->
   <mat-form-field appearance="outline">
     <mat-label>Nombre*</mat-label>
     <input formControlName="nombre" matInput/>
     <mat-error>El campo Nombre es requerido</mat-error>
   </mat-form-field>
 
+   <!--Campo Fecha de nacimiento-->
   <mat-form-field appearance="outline">
     <mat-label>Fecha de Nacimiento</mat-label>
     <input formControlName="fechaNacimiento" matInput [matDatepicker]="picker"/>
@@ -17,6 +18,9 @@
     <mat-datepicker #picker></mat-datepicker>
   </mat-form-field>
 
+  <app-input-img (archivoSleccionado)="agregarImagen($event)" [imagenRecibida]="modeloHijo?.foto"></app-input-img>
+
+  <!--Boton-->
   <div>
     <button mat-flat-button color="primary" [disabled]="formActores.invalid">
       Guardar Cambios
