@@ -10,7 +10,7 @@ import { Component, OnInit, Output, EventEmitter, Input } from '@angular/core';
 export class FormularioActoresComponent implements OnInit {
 
   @Input() modeloHijo: actorDTO
-  @Output() submit: EventEmitter<actorCreacionDTO> = new EventEmitter<actorCreacionDTO>();
+  @Output() Onsubmit: EventEmitter<actorCreacionDTO> = new EventEmitter<actorCreacionDTO>();
   formActores: FormGroup;
 
   constructor(private formBuilder: FormBuilder) { }
@@ -20,7 +20,8 @@ export class FormularioActoresComponent implements OnInit {
     this.formActores = this.formBuilder.group({
       nombre: ['', { validators: [Validators.required] }],
       fechaNacimiento: '',
-      foto:''
+      foto: '',
+      biografia:''
     });
 
     if (this.modeloHijo !== undefined) {
@@ -30,9 +31,10 @@ export class FormularioActoresComponent implements OnInit {
 
   onSubmit() {
     //Emitimos los valores del formualrio
-    this.submit.emit(this.formActores.value);
+    this.Onsubmit.emit(this.formActores.value);
   }
 
+  //Agregamos la imagen 
   agregarImagen(imgArchivo: File) {
     debugger;
     //Obtenemos la foto del formulario
@@ -40,6 +42,14 @@ export class FormularioActoresComponent implements OnInit {
     //Setetamos el valor
     foto.setValue(imgArchivo);
      console.log(foto.value.name)
+  }
+
+  //Obtenemos el texto enriquecido y lo modificamos en el modelo
+  CambiotextEnriquecido(texto: string) {
+    //Obtenemos el valor del elemento
+    let textoEnriquecido = this.formActores.get('biografia');
+    //Seteamos el valor del elemento
+    textoEnriquecido.setValue(texto);
   }
 
 }
