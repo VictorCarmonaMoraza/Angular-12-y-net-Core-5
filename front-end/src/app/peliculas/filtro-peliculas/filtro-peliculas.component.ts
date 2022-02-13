@@ -94,7 +94,7 @@ export class FiltroPeliculasComponent implements OnInit {
       //añadimos al array de querystring el valor del titulo
       queryStrings.push(`titulo=${valoresFormulario.titulo}`);
     }
-    //Si tenemos titulo
+    //Si tenemos genero
     if (valoresFormulario.generoId != '0') {
       //añadimos al array de querystring el valor del titulo
       queryStrings.push(`generoId=${valoresFormulario.generoId}`);

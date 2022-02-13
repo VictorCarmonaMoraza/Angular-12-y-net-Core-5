@@ -1,0 +1,13 @@
+form {
+  /*ancho maximo del elemento form*/
+  max-width: 500px;
+}
+
+/*El campo ocupara el 100% de la linea*/
+mat-form-field {
+  width: 100%;
+}
+
+button {
+  margin-right: 1rem;
+}
