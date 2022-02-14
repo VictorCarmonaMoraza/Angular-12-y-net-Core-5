@@ -1,0 +1,8 @@
+/*Dimensiones del div*/
+div{
+  width: 800px;
+  height: 600px;
+  /*margen con los botones de abajo*/
+  margin-bottom: 1rem;
+  
+}
