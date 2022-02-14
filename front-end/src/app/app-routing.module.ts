@@ -31,7 +31,7 @@ const routes: Routes = [
   { path: 'cines/editar/:id', component: EditarCineComponent },
 
   { path: 'peliculas/crear', component: CrearPeliculaComponent },
-  { path: 'pelicular/editar/:id', component: EditarPeliculaComponent },
+  { path: 'peliculas/editar/:id', component: EditarPeliculaComponent },
   { path: 'peliculas/buscar', component: FiltroPeliculasComponent },
 
   /*Regla de ruteo Wildcard, sino no existe el id o esta caido, con esto el problema es que quedaria en la url

@@ -1,4 +1,4 @@
-import { Component, EventEmitter, OnInit, Output } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 
 @Component({
   selector: 'app-input-markdown',
@@ -7,7 +7,10 @@ import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 })
 export class InputMarkdownComponent implements OnInit {
 
-  contenidoMarkdown = '';
+  @Input() contenidoMarkdown = '';
+
+  //Parametro para el componete
+  @Input() placeHolderTextArea: string = 'Texto';
 
   //Para enviar al componente padre el texto
   @Output() textEnriquecido: EventEmitter<string> = new EventEmitter<string>();

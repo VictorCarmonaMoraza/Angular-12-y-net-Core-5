@@ -1,0 +1,41 @@
+<form (submit)="guardarCambiosPelicula()" [formGroup]="formPeliculas">
+  <!--Campo titulo-->
+<mat-form-field appearance="outline">
+  <mat-label>Titulo*</mat-label>
+  <input formControlName="titulo" matInput/>
+  <mat-error>El campo titulo es requerido</mat-error>
+</mat-form-field>
+
+<div class="contenedor-checkbox">
+<!--Campo En cines-->
+<mat-checkbox formControlName="enCines">En cines</mat-checkbox>
+</div>
+
+<!--Campo trailer-->
+<mat-form-field appearance="outline">
+  <mat-label>Trailer</mat-label>
+  <input formControlName="trailer" matInput/>
+</mat-form-field>
+
+<!--Campo Fecha de lanzamiento-->
+<mat-form-field appearance="outline">
+  <mat-label>Fecha de Lanzamiento</mat-label>
+  <input formControlName="fechaLanzamiento" matInput [matDatepicker]="picker"/>
+  <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+  <mat-datepicker #picker></mat-datepicker>
+</mat-form-field>
+
+<!--Campo imagen-->
+<h4>Seleccionar Poster</h4>
+<app-input-img [imagenRecibida]="modeloRecibdio?.poster" (archivoSleccionado)="archivoSeleccionado($event)"></app-input-img>
+
+<h4>Resumen de la Pelicula</h4>
+<app-input-markdown [contenidoMarkdown]="modeloRecibdio?.resumen" (textEnriquecido)="changeMarkDown($event)" [placeHolderTextArea]="'Resumen'"></app-input-markdown>
+
+<div>
+  <!--Boton guardar-->
+  <button mat-flat-button color="primary" [disabled]="formPeliculas.invalid">Guardar Cambios</button>
+  <!--Boton Cancelar-->
+  <a mat-stroked-button routerLink="/">Cancelar</a>
+</div>
+</form>
