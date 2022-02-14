@@ -1,4 +1,6 @@
 <h2>Editar Pelicula</h2>
 
 
-<app-formulario-pelicula [modeloRecibdio]="modeloPelicula"></app-formulario-pelicula>
+<app-formulario-pelicula [modeloRecibdio]="modeloPelicula" (modeloPeliculaEmitir)="guardarCambiosPelicula($event)">
+  
+</app-formulario-pelicula>

@@ -20,10 +20,10 @@ export class InputMarkdownComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  inputTextArea(texto: string) {
-    // console.log(texto);
-    this.contenidoMarkdown = texto;
-    this.textEnriquecido.emit(texto);
-  }
+  // inputTextArea(texto: string) {
+  //   // console.log(texto);
+  //   this.contenidoMarkdown = texto;
+  //   this.textEnriquecido.emit(texto);
+  // }
 
 }
