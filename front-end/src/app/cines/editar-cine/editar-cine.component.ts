@@ -9,7 +9,7 @@ import { cineCreacionDTO } from '../modelo/cine'
 })
 export class EditarCineComponent implements OnInit {
 
-  modeloCine: cineDTO = { nombreCine: 'Sambil' }
+  modeloCine: cineDTO = { nombreCine: 'Sambil', latitud: 37.35090179274617, longitud: -366.031494140625 }
 
   constructor() {}
 

@@ -1,5 +1,6 @@
-import { Component, OnInit } from '@angular/core';
-import { tileLayer, latLng, LeafletMouseEvent, Marker, marker } from 'leaflet';
+import { Coordenada } from './modeloCoordenada/coordenada';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { tileLayer, latLng, LeafletMouseEvent, Marker, marker,icon } from 'leaflet';
 
 
 @Component({
@@ -9,12 +10,19 @@ import { tileLayer, latLng, LeafletMouseEvent, Marker, marker } from 'leaflet';
 })
 export class MapaComponent implements OnInit {
 
+  @Input() coordenadaasIniciales: Coordenada[] = [];
   //Paraq poder hacer marcaciones en nuesttro mapa
   capas: Marker<any>[] = [];
+
+  //Queremos emitir las coordenadas ara que se queden en el FormGroup
+  @Output() coordenadaSeleccionadaActual: EventEmitter<Coordenada> = new EventEmitter<Coordenada>();
 
   constructor() { }
 
   ngOnInit(): void {
+    this.capas = this.coordenadaasIniciales.map(valor =>
+      marker([valor.latitud, valor.longitud])
+    );
   }
 //Configuraciones iniciales de nuestro mapa
   options = {
@@ -26,16 +34,24 @@ export class MapaComponent implements OnInit {
   };
 
   senalarPuntoEnMapa(event: LeafletMouseEvent) {
-    debugger;
     //Obtenemos la latitud cuando marcamos
-    const latitud = event.latlng.lat;
+    const latitudObtenida = event.latlng.lat;
     //Obtenemos la longitud cuando marcamos
-    const longitud = event.latlng.lng;
+    const longitudObtenida = event.latlng.lng;
     //Mostrar dos datos en un console log
-    console.log({ latitud, longitud })
+    console.log({ latitudObtenida, longitudObtenida })
     //Para solo poder marcar una vez en pantalla
     this.capas = [];
     //Añadimos la marcacion a nuestro arreglo
-    this.capas.push(marker([latitud, longitud]));
+    this.capas.push(marker([latitudObtenida, longitudObtenida], {
+      icon: icon({
+        iconSize: [25, 41],
+        iconAnchor: [13, 41],
+        iconUrl: 'marker-icon.png',
+        iconRetinaUrl: 'marker-icon-2x.png',
+        shadowUrl:'assets/marker-shadow.png'
+      })
+    }));
+    this.coordenadaSeleccionadaActual.emit({ latitud: latitudObtenida, longitud: longitudObtenida});
   }
 }

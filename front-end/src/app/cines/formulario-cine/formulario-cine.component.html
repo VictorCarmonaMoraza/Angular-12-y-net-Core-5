@@ -7,8 +7,11 @@
     <mat-error *ngIf="formCines.invalid">El acmpo nombre es requerido</mat-error>
   </mat-form-field>
 
+  <h4>Seleccione el cine en el mapa</h4>
   <div>
-    <app-mapa></app-mapa>
+    <app-mapa (coordenadaSeleccionada)="agregarCoordenada($event)"
+    [coordenadaasIniciales]="coordenadaInicial"></app-mapa>
+
   </div>
 
   <div>
