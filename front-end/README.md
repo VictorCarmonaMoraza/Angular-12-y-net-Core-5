@@ -1,4 +1,4 @@
-## 66 - Selector de Actores -Componente Tabla
+## 67 - Selector de Actores - Arrastrando Elementos
 
 
 
