@@ -29,5 +29,15 @@ namespace back_end.Repositorios
         {
             return _generos;
         }
+
+        /// <summary>
+        /// Obtiene un genero por su Id
+        /// </summary>
+        /// <param name="Id"></param>
+        /// <returns></returns>
+        public Genero ObtenerPorId(int Id)
+        {
+            return _generos.FirstOrDefault(x => x.Id == Id);
+        }
     }
 }
