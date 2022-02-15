@@ -1,6 +1,7 @@
 ﻿using back_end.Entidades;
 using back_end.Interfaces;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.ModelBinding;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 
@@ -31,9 +32,17 @@ namespace back_end.Controllers
         /// </summary>
         /// <param name="Id">Id del genero</param>
         /// <returns></returns>
-        [HttpGet("{Id:int}/{nombre=Roberto}")]
-        public async Task<ActionResult<Genero>> Get(int Id, string nombre)
+        /// [BindRequired] indicara que es obligatorio
+        [HttpGet("{Id:int}")]
+        public async Task<ActionResult<Genero>> Get(int Id, [BindRequired] string nombre)
         {
+            //Si el modelo es valido
+            if (!ModelState.IsValid)
+            {
+                //Le indicara al usuario que regla de validacion no ha cumplido
+                return BadRequest(ModelState);
+            }
+
             var genero = await repositorio.ObtenerPorId(Id);
 
             //Comprobamos que no sea nulo
@@ -47,13 +56,13 @@ namespace back_end.Controllers
 
 
         [HttpPost]
-        public ActionResult Post()
+        public ActionResult Post([FromBody] Genero genero)
         {
             return NoContent();
         }
 
         [HttpPut]
-        public ActionResult Put()
+        public ActionResult Put([FromBody] Genero genero)
         {
             return NoContent();
         }
