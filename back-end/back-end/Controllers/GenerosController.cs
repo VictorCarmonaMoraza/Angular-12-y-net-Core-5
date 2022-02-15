@@ -8,6 +8,7 @@ using System.Threading.Tasks;
 namespace back_end.Controllers
 {
     [Route("api/generos")]
+    [ApiController]
     public class GenerosController:Controller
     {
         private readonly IRepositorio repositorio;
@@ -36,12 +37,12 @@ namespace back_end.Controllers
         [HttpGet("{Id:int}")]
         public async Task<ActionResult<Genero>> Get(int Id, [BindRequired] string nombre)
         {
-            //Si el modelo es valido
-            if (!ModelState.IsValid)
-            {
-                //Le indicara al usuario que regla de validacion no ha cumplido
-                return BadRequest(ModelState);
-            }
+            ////Si el modelo es valido
+            //if (!ModelState.IsValid)
+            //{
+            //    //Le indicara al usuario que regla de validacion no ha cumplido
+            //    return BadRequest(ModelState);
+            //}
 
             var genero = await repositorio.ObtenerPorId(Id);
 
