@@ -1,11 +1,9 @@
 ﻿using back_end.Interfaces;
-using back_end.Repositorios;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Threading.Tasks;
 
 namespace back_end.Controllers
 {

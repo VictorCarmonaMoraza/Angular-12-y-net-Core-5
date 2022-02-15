@@ -1,10 +1,7 @@
 ﻿using back_end.Entidades;
 using back_end.Interfaces;
 using Microsoft.AspNetCore.Mvc;
-using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 
 namespace back_end.Controllers
 {
@@ -31,10 +28,10 @@ namespace back_end.Controllers
         /// <summary>
         /// Obtenemos un genero por Id
         /// </summary>
-        /// <param name="Id"></param>
+        /// <param name="Id">Id del genero</param>
         /// <returns></returns>
-        [HttpGet]
-        public Genero Get(int Id)
+        [HttpGet("{Id:int}/{nombre=Roberto}")]
+        public Genero Get(int Id, string nombre)
         {
             var genero = repositorio.ObtenerPorId(Id);
 
