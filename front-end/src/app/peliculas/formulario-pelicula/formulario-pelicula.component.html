@@ -29,8 +29,14 @@
 <h4>Seleccionar Poster</h4>
 <app-input-img [imagenRecibida]="modeloRecibdio?.poster" (archivoSleccionado)="archivoSeleccionado($event)"></app-input-img>
 
+<!--Campo Resumen-->
 <h4>Resumen de la Pelicula</h4>
 <app-input-markdown [contenidoMarkdown]="modeloRecibdio?.resumen" (textEnriquecido)="changeMarkDown($event)" [placeHolderTextArea]="'Resumen'"></app-input-markdown>
+
+<!--Compoente de selector multiple-->
+<h4>Seleccione los generos</h4>
+<app-selector-multiple
+[Seleccionados]="generosSeleccionados" [NoSeleccionados]="generosNoSeleccionados"></app-selector-multiple>
 
 <div>
   <!--Boton guardar-->

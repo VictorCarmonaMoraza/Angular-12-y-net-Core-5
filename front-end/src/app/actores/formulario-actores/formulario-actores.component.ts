@@ -34,9 +34,8 @@ export class FormularioActoresComponent implements OnInit {
     this.Onsubmit.emit(this.formActores.value);
   }
 
-  //Agregamos la imagen 
+  //Agregamos la imagen
   agregarImagen(imgArchivo: File) {
-    debugger;
     //Obtenemos la foto del formulario
     let foto = this.formActores.get('foto')
     //Setetamos el valor

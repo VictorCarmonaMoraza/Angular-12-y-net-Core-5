@@ -23,13 +23,11 @@ export class RatingComponent implements OnInit {
 
   //Para cuando pasemos el raton por encima de las estrellas
   manejarMouseEnter(indice: number): void {
-    debugger;
     this.estrellaSeleccionada = indice + 1;
   }
 
   //Para cuando abandonemos las estrellas
   manejarMouseLeave() {
-    debugger;
     //si el usuario no ha votado
     if (this.estrellaAnterior !=0) {
       this.estrellaSeleccionada = this.estrellaAnterior;
@@ -41,7 +39,6 @@ export class RatingComponent implements OnInit {
 
   //Marcador de la ultima estrella seleccionada
   marcarEstrellaSeleccionada(indice: number): void{
-    debugger;
     this.estrellaSeleccionada = indice + 1;
     this.votacionUsuario = true;
     this.estrellaAnterior = this.estrellaSeleccionada;
