@@ -1,4 +1,4 @@
-## 64 - Selector de Cines
+## 65 - Selector de Actores - Componente Tabla
 
 
 
