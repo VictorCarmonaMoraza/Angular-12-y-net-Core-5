@@ -1,3 +1,2 @@
-﻿## 73-Reglas de Ruteo
+﻿## 74 - Tipos de Datos de Retorno de una Acción
 
-Las reglas de ruteo son las que nos permiten mapear una URL con una accion.

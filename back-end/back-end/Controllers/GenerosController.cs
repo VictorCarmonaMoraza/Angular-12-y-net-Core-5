@@ -20,7 +20,7 @@ namespace back_end.Controllers
         /// </summary>
         /// <returns>listado de generos</returns>
         [HttpGet]
-        public List<Genero> Get()
+        public ActionResult<List<Genero>> Get()
         {
             return repositorio.ObtenerTodosLosGeneros();
         }
@@ -31,14 +31,14 @@ namespace back_end.Controllers
         /// <param name="Id">Id del genero</param>
         /// <returns></returns>
         [HttpGet("{Id:int}/{nombre=Roberto}")]
-        public Genero Get(int Id, string nombre)
+        public ActionResult<Genero> Get(int Id, string nombre)
         {
             var genero = repositorio.ObtenerPorId(Id);
 
             //Comprobamos que no sea nulo
             if (genero == null)
             {
-                //return NotFound();
+                return NotFound();
             }
 
             return genero;
@@ -46,26 +46,21 @@ namespace back_end.Controllers
 
 
         [HttpPost]
-        public void Post()
+        public ActionResult Post()
         {
-
+            return NoContent();
         }
 
         [HttpPut]
-        public void Put()
+        public ActionResult Put()
         {
-
+            return NoContent();
         }
 
         [HttpDelete]
-        public ContentResult Delete()
+        public ActionResult Delete()
         {
-            ContentResult resultado = new ContentResult
-            {
-                Content = "<h1>Te vamos a eliminar Victor</h1>",
-                ContentType ="htnl"
-            };
-            return resultado;
+            return NoContent();
         }
 
     }
