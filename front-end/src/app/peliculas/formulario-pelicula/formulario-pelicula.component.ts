@@ -31,7 +31,8 @@ export class FormularioPeliculaComponent implements OnInit {
       enCines: false,
       trailer: '',
       fechaLanzamiento: '',
-      poster: ''
+      poster: '',
+      generosId:''
     });
     if (this.modeloRecibdio !== undefined) {
       this.formPeliculas.patchValue(this.modeloRecibdio);
@@ -40,10 +41,16 @@ export class FormularioPeliculaComponent implements OnInit {
 
   guardarCambiosPelicula() {
     console.table(this.generosSeleccionados);
+    debugger;
+    //Genero un array con las llaves de los generos seleccionados
+    const generosIds = this.generosSeleccionados.map(val => val.llave);
+    // const NombreGenero = this.generosSeleccionados.map(x => x.valor);
+    this.formPeliculas.get('generosId').setValue(generosIds);
     this.modeloPeliculaEmitir.emit(this.formPeliculas.value);
   }
 
   archivoSeleccionado(archivo: File) {
+
     this.formPeliculas.get('poster').setValue(archivo);
   }
 
