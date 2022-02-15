@@ -1,7 +1,9 @@
 ﻿using back_end.Entidades;
 using back_end.Interfaces;
+using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Threading.Tasks;
 
 namespace back_end.Repositorios
 {
@@ -33,9 +35,14 @@ namespace back_end.Repositorios
         /// </summary>
         /// <param name="Id"></param>
         /// <returns></returns>
-        public Genero ObtenerPorId(int Id)
+        public async Task<Genero> ObtenerPorId(int Id)
         {
-            return _generos.FirstOrDefault(x => x.Id == Id);
+            //Esperamos 3 segundos
+            //await Task.Delay(TimeSpan.FromSeconds(3));
+            //Esperaremos un milisegudno
+            await Task.Delay(1);
+
+            return  _generos.FirstOrDefault(x => x.Id == Id);
         }
     }
 }

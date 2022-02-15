@@ -2,6 +2,7 @@
 using back_end.Interfaces;
 using Microsoft.AspNetCore.Mvc;
 using System.Collections.Generic;
+using System.Threading.Tasks;
 
 namespace back_end.Controllers
 {
@@ -31,9 +32,9 @@ namespace back_end.Controllers
         /// <param name="Id">Id del genero</param>
         /// <returns></returns>
         [HttpGet("{Id:int}/{nombre=Roberto}")]
-        public ActionResult<Genero> Get(int Id, string nombre)
+        public async Task<ActionResult<Genero>> Get(int Id, string nombre)
         {
-            var genero = repositorio.ObtenerPorId(Id);
+            var genero = await repositorio.ObtenerPorId(Id);
 
             //Comprobamos que no sea nulo
             if (genero == null)
