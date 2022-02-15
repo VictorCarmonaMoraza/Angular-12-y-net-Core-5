@@ -21,6 +21,15 @@ export class FormularioPeliculaComponent implements OnInit {
   generosNoSeleccionados: MultipleselectorModel[] = [{ llave: 1, valor: 'Drama' }, { llave: 2, valor: 'Accion' },{ llave: 3, valor: 'Fantasia' }];
 
   generosSeleccionados: MultipleselectorModel[] = [];
+
+  cinesNoSeleccionados: MultipleselectorModel[] = [
+    { llave: 1, valor: 'Nervion' },
+    { llave: 2, valor: 'Alcala de Guadaira' },
+    { llave: 3, valor: 'Camas' }
+  ];
+
+  cinesSeleccionados: MultipleselectorModel[] = [];
+
   constructor(private formBuilder:FormBuilder) { }
 
   ngOnInit(): void {
@@ -32,7 +41,8 @@ export class FormularioPeliculaComponent implements OnInit {
       trailer: '',
       fechaLanzamiento: '',
       poster: '',
-      generosId:''
+      generosId: '',
+      cinesId:''
     });
     if (this.modeloRecibdio !== undefined) {
       this.formPeliculas.patchValue(this.modeloRecibdio);
@@ -41,11 +51,13 @@ export class FormularioPeliculaComponent implements OnInit {
 
   guardarCambiosPelicula() {
     console.table(this.generosSeleccionados);
-    debugger;
     //Genero un array con las llaves de los generos seleccionados
     const generosIds = this.generosSeleccionados.map(val => val.llave);
     // const NombreGenero = this.generosSeleccionados.map(x => x.valor);
     this.formPeliculas.get('generosId').setValue(generosIds);
+
+    const cinesIds = this.cinesSeleccionados.map(val => val.llave);
+    this.formPeliculas.get('cinesId').setValue(cinesIds);
     this.modeloPeliculaEmitir.emit(this.formPeliculas.value);
   }
 
