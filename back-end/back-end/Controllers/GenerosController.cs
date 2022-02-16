@@ -1,8 +1,12 @@
 ﻿using back_end.Entidades;
+using back_end.Filtros_Personalizados;
 using back_end.Interfaces;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.ModelBinding;
 using Microsoft.Extensions.Logging;
+using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 
@@ -10,6 +14,7 @@ namespace back_end.Controllers
 {
     [Route("api/generos")]
     [ApiController]
+    //[Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme)]
     public class GenerosController:Controller
     {
         private readonly IRepositorio repositorio;
@@ -28,6 +33,8 @@ namespace back_end.Controllers
         [HttpGet("listado")]
         [HttpGet("/listadogeneros")]
         [HttpGet]
+        //[ResponseCache(Duration =60)]
+        [ServiceFilter(typeof(MiFiltroDeAccion))]
         public ActionResult<List<Genero>> Get()
         {
             logger.LogInformation("Vamos a mostrar los generos");
@@ -41,7 +48,8 @@ namespace back_end.Controllers
         /// <returns></returns>
         /// [BindRequired] indicara que es obligatorio
         [HttpGet("{Id:int}")]
-        public async Task<ActionResult<Genero>> Get(int Id, [BindRequired] string nombre)
+        //public async Task<ActionResult<Genero>> Get(int Id, [BindRequired] string nombre)
+        public async Task<ActionResult<Genero>> Get(int Id, [FromHeader] string nombre)
         {
             ////Si el modelo es valido
             //if (!ModelState.IsValid)
@@ -55,6 +63,7 @@ namespace back_end.Controllers
             //Comprobamos que no sea nulo
             if (genero == null)
             {
+                throw new ApplicationException($"El genero de ID {Id} no fue encontrado");
                 logger.LogWarning($"No pudimos encontrar el genero de id {Id}");
                 return NotFound();
             }
