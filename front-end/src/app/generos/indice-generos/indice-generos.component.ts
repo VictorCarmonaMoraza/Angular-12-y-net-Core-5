@@ -11,8 +11,10 @@ export class IndiceGenerosComponent implements OnInit {
   constructor(private generoService:GenerosService) { }
 
   ngOnInit(): void {
-    const generos = this.generoService.obtenerTodos();
-    console.log(generos);
+    this.generoService.obtenerTodos()
+      .subscribe(generos => {
+        console.log(generos);
+    },error=>console.error(error));
   }
 
 }
