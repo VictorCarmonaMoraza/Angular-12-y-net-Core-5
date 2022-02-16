@@ -1,6 +1,7 @@
-﻿## 78 - Validaciones Personalizadas
+﻿## 81 - Loggers
 
-Hemos implementado dos tipos de validaciones, la primera que es validacion por atributoi mediante la creacion
-de una clase, la validacion por modelo la hacve implementando la interfaz IValidatableObject.
+Implemnetamos la interfaz ILogger para mostrar los mensajes de error por distitnos niveles.
+
+
 
 
