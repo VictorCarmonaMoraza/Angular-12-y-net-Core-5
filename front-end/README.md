@@ -1,11 +1,5 @@
-## 89 - HttpClient, Environment y CORS
+## 90 - Creando Generos
 
-Intentaremos conectarnos con nuestro Web API
-
-1-Tenemos que importar un modulo en el app.module.ts
-
-import { HttpClientModule } from '@angular/common/http';
-
-Modificamos tanto back como front para poder hacer la comunicacion conjunta
+Hemos creado varios generos y hemos hecho varias correciones a la app para ccrear generos
 
   

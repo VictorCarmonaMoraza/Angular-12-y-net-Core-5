@@ -1,3 +1,4 @@
+import { GenerosService } from './../generos.service';
 import { generoCreacionDTO } from './../Interface-Genero/IGenero';
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
@@ -11,12 +12,18 @@ import { primeraLetraMayuscula } from 'src/app/utilidades/validadores/primeraLat
 })
 export class CrearGeneroComponent {
 
-  constructor(private router: Router) { }
+  constructor(
+    private router: Router,
+    private generosService: GenerosService
+  ) { }
 
-  GuardarGenero(genero:generoCreacionDTO) {
-    //Guardar los cambios
-    console.log(genero);
-    //Navegamos hacia la pagian principal de generos
-    this.router.navigate(['/generos']);
+  //Llamada al servicio para generar un genero
+  GuardarGenero(genero: generoCreacionDTO) {
+    this.generosService.crear(genero).subscribe(() => {
+      //Navegamos hacia la pagian principal de generos
+      this.router.navigate(['/generos']);
+    }, error => console.error(error));
   }
+
 }
+

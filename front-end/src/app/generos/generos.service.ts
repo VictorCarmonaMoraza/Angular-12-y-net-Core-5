@@ -1,5 +1,5 @@
 import { HttpClient } from '@angular/common/http';
-import { generoDTO } from './Interface-Genero/IGenero';
+import { generoCreacionDTO, generoDTO } from './Interface-Genero/IGenero';
 import { Injectable } from '@angular/core';
 import { environment } from 'src/environments/environment';
 import { Observable } from 'rxjs';
@@ -12,10 +12,15 @@ export class GenerosService {
 
   constructor( private http:HttpClient) { }
 
-  private apiURL = environment.apiUrl;
+  private apiURL = environment.apiUrl+'generos';
 
   public obtenerTodos():Observable<generoDTO[]>
   {
     return this.http.get<generoDTO[]>(this.apiURL)
+  }
+
+  //Con este metodo crearemos un genero
+  public crear(genero: generoCreacionDTO) {
+    return this.http.post(this.apiURL,genero);
   }
 }
