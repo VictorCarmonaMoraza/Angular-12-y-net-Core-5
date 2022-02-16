@@ -1,5 +1,6 @@
 ﻿using back_end.Entidades;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Logging;
 using System;
 using System.Collections.Generic;
@@ -14,11 +15,13 @@ namespace back_end.Controllers
     {
         
         private readonly ILogger<GenerosController> logger;
+        private readonly ApplicationDbContext context;
 
-        public GenerosController(ILogger<GenerosController> logger)
+        public GenerosController(ILogger<GenerosController> logger, ApplicationDbContext context)
         {
             
             this.logger = logger;
+            this.context = context;
         }
 
         /// <summary>
@@ -26,9 +29,9 @@ namespace back_end.Controllers
         /// </summary>
         /// <returns>listado de generos</returns>
         [HttpGet]
-        public ActionResult<List<Genero>> Get()
+        public async Task<ActionResult<List<Genero>>> Get()
         {
-            return new List<Genero> { new Genero() { Id = 1, Nombre = "Comedia" } };
+            return  await context.Generos.ToListAsync();
         }
 
         /// <summary>
@@ -44,9 +47,12 @@ namespace back_end.Controllers
         }
 
         [HttpPost]
-        public ActionResult Post([FromBody] Genero genero)
+        public async Task<ActionResult> Post([FromBody] Genero genero)
         {
-            throw new NotImplementedException();
+            context.Add(genero);
+            await context.SaveChangesAsync();
+            //Para retornar un 204
+            return NoContent();
         }
 
         [HttpPut]

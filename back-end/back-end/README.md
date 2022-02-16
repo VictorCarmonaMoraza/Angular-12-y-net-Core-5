@@ -1,6 +1,16 @@
-﻿## 87 - Limpiando el Back-End
+﻿## 90 - Creando la base de datos
 
-Se ha limpiado el proyecto con todo lo que tenia de mas para dejarlo y asi empezar a poder trabajar con la aplicacion para conectarla
-con el front
+Instalaremos desde Nuget
+
+-microsoft.entityFrameworkCore.SqlServer
+
+-microsoft.entityFrameworkCore.tools
+
+Comando para la consola del Administrador de paquetes
+
+1-Add-Migration Initial
+
+2- Update-Database
+
 
 
