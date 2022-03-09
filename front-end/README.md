@@ -1,5 +1,5 @@
-## 90 - Creando Generos
+## 92 - Mostrar Errores del Web API
 
-Hemos creado varios generos y hemos hecho varias correciones a la app para ccrear generos
+
 
   

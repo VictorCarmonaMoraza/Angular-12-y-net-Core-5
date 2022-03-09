@@ -1,6 +1,7 @@
 
 
 
+<app-mostrar-errores [erroresRecibidosDelFormulario]="ErroresRecibidos"></app-mostrar-errores> 
 <!--Asociamos el formulario a formGroup-->
 <form (submit)="guardarCambiosFormGenero()" [formGroup]="formGenero">
   <mat-form-field appearance="outline">

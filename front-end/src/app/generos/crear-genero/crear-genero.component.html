@@ -2,4 +2,6 @@
 
 <h2>Crear Género</h2>
 
-<app-formulario-genero (FormularioEnvio)="GuardarGenero($event)"></app-formulario-genero>
+<app-formulario-genero
+[ErroresRecibidos]="errores"
+(FormularioEnvio)="GuardarGenero($event)"></app-formulario-genero>

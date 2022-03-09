@@ -1,0 +1,4 @@
+<!--Recorremos el listado de errores para mostrarlos-->
+<ul *ngIf="erroresRecibidosDelFormulario.length > 0">
+  <li *ngFor="let error of erroresRecibidosDelFormulario">{{error}}</li>
+</ul>

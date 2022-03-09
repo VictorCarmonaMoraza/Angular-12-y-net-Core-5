@@ -1,8 +1,7 @@
+import { primeraLetraMayuscula } from 'src/app/utilidades/validadores/primeraLatraMayuscula';
 import { generoCreacionDTO } from './../Interface-Genero/IGenero';
 import { Component, OnInit, Output, EventEmitter, Input } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { Router } from '@angular/router';
-import { primeraLetraMayuscula } from 'src/app/utilidades/validadores/primeraLatraMayuscula';
 
 @Component({
   selector: 'app-formulario-genero',
@@ -11,6 +10,8 @@ import { primeraLetraMayuscula } from 'src/app/utilidades/validadores/primeraLat
 })
 export class FormularioGeneroComponent implements OnInit {
 
+  //errores que voy a recibir del crear-genero
+  @Input() ErroresRecibidos: string[] = [];
   @Output() FormularioEnvio: EventEmitter<generoCreacionDTO> = new EventEmitter<generoCreacionDTO>();
   @Input() modeloRecibidoParaEditar: generoCreacionDTO;
   formGenero: FormGroup;

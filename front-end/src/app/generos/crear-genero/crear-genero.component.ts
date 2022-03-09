@@ -1,9 +1,9 @@
+import { parsearErroresAPI } from 'src/app/utilidades/utilidades';
 import { GenerosService } from './../generos.service';
 import { generoCreacionDTO } from './../Interface-Genero/IGenero';
-import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { Component} from '@angular/core';
 import { Router } from '@angular/router';
-import { primeraLetraMayuscula } from 'src/app/utilidades/validadores/primeraLatraMayuscula';
+
 
 @Component({
   selector: 'app-crear-genero',
@@ -11,6 +11,9 @@ import { primeraLetraMayuscula } from 'src/app/utilidades/validadores/primeraLat
   styleUrls: ['./crear-genero.component.css']
 })
 export class CrearGeneroComponent {
+
+  //Este arreglo de errores sera el que mandemos para el formulario de genero
+  errores: string[] = [];
 
   constructor(
     private router: Router,
@@ -22,7 +25,7 @@ export class CrearGeneroComponent {
     this.generosService.crear(genero).subscribe(() => {
       //Navegamos hacia la pagian principal de generos
       this.router.navigate(['/generos']);
-    }, error => console.error(error));
+    }, error => this.errores=parsearErroresAPI(error));
   }
 
 }
