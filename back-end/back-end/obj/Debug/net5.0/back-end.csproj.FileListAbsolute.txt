@@ -57,3 +57,10 @@ C:\Users\Victo\Desktop\Proyectos 2022\Angular 12 y net Core 5\back-end\back-end\
 C:\Users\Victo\Desktop\Proyectos 2022\Angular 12 y net Core 5\back-end\back-end\obj\Debug\net5.0\ref\back-end.dll
 C:\Users\Victo\Desktop\Proyectos 2022\Angular 12 y net Core 5\back-end\back-end\obj\Debug\net5.0\back-end.pdb
 C:\Users\Victo\Desktop\Proyectos 2022\Angular 12 y net Core 5\back-end\back-end\obj\Debug\net5.0\back-end.genruntimeconfig.cache
+C:\Users\Victo\Desktop\Proyectos 2022\Angular 12 y net Core 5\back-end\back-end\obj\Debug\net5.0\back-end.csproj.AssemblyReference.cache
+C:\Users\Victo\Desktop\Proyectos 2022\Angular 12 y net Core 5\back-end\back-end\bin\Debug\net5.0\AutoMapper.dll
+C:\Users\Victo\Desktop\Proyectos 2022\Angular 12 y net Core 5\back-end\back-end\bin\Debug\net5.0\AutoMapper.Extensions.Microsoft.DependencyInjection.dll
+C:\Users\Victo\Desktop\Proyectos 2022\Angular 12 y net Core 5\back-end\back-end\bin\Debug\net5.0\Microsoft.Extensions.DependencyInjection.Abstractions.dll
+C:\Users\Victo\Desktop\Proyectos 2022\Angular 12 y net Core 5\back-end\back-end\bin\Debug\net5.0\Microsoft.Extensions.Options.dll
+C:\Users\Victo\Desktop\Proyectos 2022\Angular 12 y net Core 5\back-end\back-end\bin\Debug\net5.0\Microsoft.Extensions.Primitives.dll
+C:\Users\Victo\Desktop\Proyectos 2022\Angular 12 y net Core 5\back-end\back-end\bin\Debug\net5.0\System.Runtime.CompilerServices.Unsafe.dll
