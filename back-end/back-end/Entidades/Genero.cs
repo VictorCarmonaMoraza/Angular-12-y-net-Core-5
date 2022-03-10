@@ -1,6 +1,5 @@
 ﻿//Una entidad representa una tabla en nuestra base de datos
 using back_end.Validaciones;
-using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 
 namespace back_end.Entidades
